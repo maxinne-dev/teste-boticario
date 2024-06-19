@@ -25,6 +25,10 @@ Optei por implementar o projeto usando **Spring 3** em **Kotlin**, já que está
 
 Então parti para primeiro implementar uma versão inicial compativel com a API base, para depois implementar cada um dos pontos de melhoria mencionados no documento (_Rate Limit_, JWT e Cache). Implementei cada _feature_ em seu respectivo branch, e usei a função de PR do _Github_ para fazer o _merge_ das branches para a _Main_.
 
+Como não usei um banco de dados, as variaveis estão em texto simples no arquivo `application.properties`. Apesar de não ser uma boa prática, como este é um teste, decidi por apenas avisar, para agilizar a implementação.
+
+Por ultimo, gostaria de falar sobre a automação dos testes. Como não foi mencionado nada a respeito de implementar testes, não implementei, até pela simplicidade da solução.
+
 ## Comentários
 
 Gostaria de comentar que achei o teste muito bom, nem simples demais para não permitir uma boa avaliação técnica, nem complexo demais para demorar na implementação. Tive alguns desafios na implementação do **Token JWT** por conta que, em geral, trabalhei com provedores *OAUTH* para gerar o token cuidar do login, o mesmo vale para o **Rate Limit** que em geral fica configurado no Gateway de API, seja do provedor (AWS API Gateway por exemplo), ou em um SaaS, como o Sensedia. Sobre o uso da **Cache** fiquei na duvida entre se queriam uma cache a nivel de controle, ou apenas os cabeçalhos HTTP, no interesse de não complicar demais, fui pela segunda opção.
